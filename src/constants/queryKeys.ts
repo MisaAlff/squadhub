@@ -4,6 +4,7 @@ export const queryKeys = {
   },
   matches: {
     all: ['matches'] as const,
+    detail: (id: string) => ['matches', id] as const,
   },
   players: {
     all: ['players'] as const,

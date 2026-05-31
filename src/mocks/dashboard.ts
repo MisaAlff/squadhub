@@ -3,24 +3,24 @@ import type { DashboardStats } from '@/types';
 import { mockNextMatch } from './matches';
 
 export const mockDashboard: DashboardStats = {
-  teamName: 'Pelada FC',
+  teamName: 'Vasco',
   season: '2025/2026',
-  wins: 4,
+  wins: 2,
   draws: 2,
-  losses: 2,
-  goalsFor: 17,
-  goalsAgainst: 10,
-  winRate: 50,
+  losses: 1,
+  goalsFor: 8,
+  goalsAgainst: 7,
+  winRate: 40,
   topScorer: {
-    playerId: 'p1',
-    name: 'Rafael Souza',
-    goals: 12,
+    playerId: 'p22',
+    name: 'Enzo',
+    goals: 1,
   },
   topAssists: {
-    playerId: 'p2',
-    name: 'Lucas Mendes',
-    assists: 9,
+    playerId: 'p18',
+    name: 'Igor',
+    assists: 4,
   },
   nextMatch: mockNextMatch,
-  totalMatches: 8,
+  totalMatches: 5,
 };

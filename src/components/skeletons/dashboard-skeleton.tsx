@@ -5,7 +5,7 @@ import { LoadingSkeleton } from '@/components/LoadingSkeleton';
 
 function StatCardSkeleton() {
   return (
-    <View className="mb-3 w-[48%] rounded-2xl bg-white p-4 shadow-sm">
+    <View className="mb-3 w-[48%] rounded-2xl border border-slate-700 bg-dark-card p-4">
       <LoadingSkeleton width={80} height={12} rounded="sm" />
       <LoadingSkeleton width={48} height={28} rounded="md" className="mt-3" />
     </View>
@@ -14,7 +14,7 @@ function StatCardSkeleton() {
 
 function HighlightCardSkeleton() {
   return (
-    <View className="mb-3 flex-row overflow-hidden rounded-2xl bg-white shadow-sm">
+    <View className="mb-3 flex-row overflow-hidden rounded-2xl border border-slate-700 bg-dark-card">
       <LoadingSkeleton width={4} height={72} rounded="none" />
       <View className="flex-1 flex-row items-center gap-3 p-4">
         <LoadingSkeleton width={44} height={44} rounded="full" />
@@ -30,10 +30,10 @@ function HighlightCardSkeleton() {
 export function DashboardSkeleton() {
   return (
     <SafeAreaView className="flex-1 bg-surface-secondary" edges={['bottom']}>
-      <View className="bg-dark px-6 pb-8 pt-4">
-        <LoadingSkeleton width={160} height={28} rounded="md" className="bg-dark-card" />
-        <LoadingSkeleton width={100} height={14} rounded="sm" className="mt-2 bg-dark-card" />
-        <LoadingSkeleton width={72} height={28} rounded="full" className="mt-4 bg-dark-card" />
+      <View className="border-b border-slate-800 bg-slate-900 px-6 pb-8 pt-4">
+        <LoadingSkeleton width={160} height={28} rounded="md" className="bg-slate-800" />
+        <LoadingSkeleton width={100} height={14} rounded="sm" className="mt-2 bg-slate-800" />
+        <LoadingSkeleton width={72} height={28} rounded="full" className="mt-4 bg-slate-800" />
       </View>
 
       <View className="-mt-4 flex-1 px-4">

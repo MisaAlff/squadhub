@@ -14,8 +14,8 @@ export function PlayerCard({ player, onPress }: PlayerCardProps) {
 
   return (
     <Pressable
-      className={`mb-3 flex-row items-center rounded-2xl bg-white p-4 shadow-sm active:bg-zinc-50 ${
-        isGuest ? 'border border-dashed border-amber-300' : ''
+      className={`mb-3 flex-row items-center rounded-2xl border border-slate-700 bg-dark-card p-4 active:opacity-90 ${
+        isGuest ? 'border-dashed border-amber-500/50' : ''
       }`}
       onPress={onPress}
     >
@@ -23,16 +23,16 @@ export function PlayerCard({ player, onPress }: PlayerCardProps) {
 
       <View className="ml-4 flex-1">
         <View className="flex-row flex-wrap items-center gap-2">
-          <Text className="text-base font-semibold text-zinc-900">{player.name}</Text>
+          <Text className="text-base font-semibold text-white">{player.name}</Text>
           {isGuest ? (
-            <View className="rounded-full bg-amber-100 px-2 py-0.5">
-              <Text className="text-[10px] font-semibold uppercase text-amber-700">
+            <View className="rounded-full bg-amber-500/20 px-2 py-0.5">
+              <Text className="text-[10px] font-semibold uppercase text-amber-300">
                 Completou
               </Text>
             </View>
           ) : null}
         </View>
-        <Text className="mt-0.5 text-sm text-zinc-500">
+        <Text className="mt-0.5 text-sm text-slate-400">
           {formatPositionLabel(player.position)}
           {isGuest ? ' · 1 jogo' : ''}
         </Text>
@@ -45,10 +45,10 @@ export function PlayerCard({ player, onPress }: PlayerCardProps) {
 
       <View
         className={`h-10 w-10 items-center justify-center rounded-full ${
-          isGuest ? 'bg-amber-50' : 'bg-zinc-100'
+          isGuest ? 'bg-amber-500/15' : 'bg-slate-700'
         }`}
       >
-        <Text className={`text-sm font-bold ${isGuest ? 'text-amber-700' : 'text-zinc-700'}`}>
+        <Text className={`text-sm font-bold ${isGuest ? 'text-amber-300' : 'text-slate-200'}`}>
           #{player.jerseyNumber}
         </Text>
       </View>

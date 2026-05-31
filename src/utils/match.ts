@@ -27,9 +27,9 @@ export function getResultBadgeClasses(result: MatchResult): {
   text: string;
 } {
   const classes: Record<MatchResult, { bg: string; text: string }> = {
-    win: { bg: 'bg-green-100', text: 'text-green-700' },
-    draw: { bg: 'bg-yellow-100', text: 'text-yellow-700' },
-    loss: { bg: 'bg-red-100', text: 'text-red-700' },
+    win: { bg: 'bg-green-500/20', text: 'text-green-400' },
+    draw: { bg: 'bg-amber-500/20', text: 'text-amber-400' },
+    loss: { bg: 'bg-rose-500/20', text: 'text-rose-400' },
   };
   return classes[result];
 }

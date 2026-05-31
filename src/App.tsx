@@ -10,7 +10,7 @@ export default function App() {
   return (
     <Providers>
       <RootNavigator />
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </Providers>
   );
 }

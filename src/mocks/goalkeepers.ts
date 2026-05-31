@@ -12,8 +12,12 @@ export const mockGoalkeepers: Goalkeeper[] = [
     yellowCards: 0,
     redCards: 0,
     mvpCount: 0,
+    wins: 2,
+    draws: 2,
+    losses: 1,
     saves: 18,
     cleanSheets: 2,
     goalsConceded: 7,
+    penaltiesSaved: 0,
   },
 ];

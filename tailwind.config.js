@@ -14,8 +14,8 @@ module.exports = {
           card: '#1e293b',
         },
         surface: {
-          DEFAULT: '#ffffff',
-          secondary: '#f4f4f5',
+          DEFAULT: '#1e293b',
+          secondary: '#020617',
         },
       },
     },

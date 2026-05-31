@@ -31,7 +31,7 @@ export function MatchesScreen({ navigation }: MatchesScreenProps) {
     return (
       <SafeAreaView className="flex-1 bg-surface-secondary" edges={['top', 'bottom']}>
         <EmptyState
-          icon={<Ionicons name="football-outline" size={48} color="#71717a" />}
+          icon={<Ionicons name="football-outline" size={48} color="#64748b" />}
           title="Nenhum jogo encontrado"
           description="Ainda não há partidas registradas para o Vasco."
         />
@@ -54,7 +54,7 @@ export function MatchesScreen({ navigation }: MatchesScreenProps) {
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        contentContainerClassName="pb-6"
+        contentContainerClassName="pb-6 pt-4"
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <DarkScreenHeader className="mb-2">

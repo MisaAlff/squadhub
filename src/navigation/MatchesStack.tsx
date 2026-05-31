@@ -17,7 +17,8 @@ export function MatchesStack() {
       screenOptions={{
         headerStyle: { backgroundColor: theme.colors.background },
         headerTintColor: theme.colors.text,
-        headerTitleStyle: { fontWeight: '600' },
+        headerTitleStyle: { fontWeight: '600', color: theme.colors.text },
+        contentStyle: { backgroundColor: theme.colors.page },
       }}
     >
       <Stack.Screen

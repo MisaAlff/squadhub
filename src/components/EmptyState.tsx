@@ -20,9 +20,9 @@ export function EmptyState({
   return (
     <View className={cn('items-center justify-center px-6 py-12', className)}>
       {icon ? <View className="mb-4">{icon}</View> : null}
-      <Text className="text-center text-lg font-semibold text-zinc-900">{title}</Text>
+      <Text className="text-center text-lg font-semibold text-white">{title}</Text>
       {description ? (
-        <Text className="mt-2 text-center text-sm text-zinc-500">{description}</Text>
+        <Text className="mt-2 text-center text-sm text-slate-400">{description}</Text>
       ) : null}
       {action ? <View className="mt-6">{action}</View> : null}
     </View>

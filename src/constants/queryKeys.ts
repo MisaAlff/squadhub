@@ -12,6 +12,7 @@ export const queryKeys = {
   },
   goalkeepers: {
     all: ['goalkeepers'] as const,
+    detail: (id: string) => ['goalkeepers', id] as const,
   },
   rankings: {
     all: ['rankings'] as const,

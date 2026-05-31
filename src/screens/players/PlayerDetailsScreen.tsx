@@ -66,7 +66,7 @@ function PlayerDetailsContent({ data }: { data: PlayerProfile }) {
       contentContainerClassName="pb-8"
       showsVerticalScrollIndicator={false}
     >
-      <View className="items-center bg-dark px-6 pb-10 pt-2">
+      <View className="items-center border-b border-slate-800 bg-slate-900 px-6 pb-10 pt-2">
         <Avatar name={data.name} imageUrl={data.avatarUrl} size="lg" />
         <Text className="mt-4 text-2xl font-bold text-white">{data.name}</Text>
         <Text className="mt-1 text-sm text-zinc-400">
@@ -82,7 +82,7 @@ function PlayerDetailsContent({ data }: { data: PlayerProfile }) {
       </View>
 
       <View className="-mt-6 px-4">
-        <SectionHeader title="Estatísticas" className="mb-1" />
+        <SectionHeader title="Estatísticas" className="mb-2" />
 
         <View className="flex-row flex-wrap justify-between">
           {stats.map((stat) => (
@@ -115,7 +115,7 @@ export function PlayerDetailsScreen({ route }: Props) {
     return (
       <SafeAreaView className="flex-1 bg-surface-secondary" edges={['bottom']}>
         <EmptyState
-          icon={<Ionicons name="alert-circle-outline" size={48} color="#71717a" />}
+          icon={<Ionicons name="alert-circle-outline" size={48} color="#64748b" />}
           title="Erro ao carregar jogador"
           description="Não foi possível carregar o perfil deste jogador."
         />

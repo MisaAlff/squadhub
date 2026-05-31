@@ -13,7 +13,7 @@ export function DarkScreenHeader({ children, className, ...props }: DarkScreenHe
 
   return (
     <View
-      className={cn('bg-dark px-6 pb-6', className)}
+      className={cn('border-b border-slate-800 bg-slate-900 px-6 pb-6', className)}
       style={{ paddingTop: insets.top + 12 }}
       {...props}
     >

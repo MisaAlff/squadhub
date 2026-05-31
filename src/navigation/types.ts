@@ -1,12 +1,16 @@
 import type { NavigatorScreenParams } from '@react-navigation/native';
 
+import type { MatchesStackParamList } from './MatchesStack';
+
+export type { MatchesStackParamList };
+
 export type AuthStackParamList = {
   Login: undefined;
 };
 
 export type AppTabsParamList = {
   Dashboard: undefined;
-  Matches: undefined;
+  Matches: NavigatorScreenParams<MatchesStackParamList>;
   Players: undefined;
   Rankings: undefined;
   Profile: undefined;

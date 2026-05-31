@@ -1,5 +1,6 @@
 export type { User } from './user';
 export type { Player, PlayerPosition } from './player';
+export type { PlayerPerformancePoint, PlayerProfile } from './player-profile';
 export type { Goalkeeper } from './goalkeeper';
 export type { Match, MatchResult } from './match';
 export type {

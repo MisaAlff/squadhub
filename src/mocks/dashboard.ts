@@ -12,9 +12,9 @@ export const mockDashboard: DashboardStats = {
   goalsAgainst: 7,
   winRate: 40,
   topScorer: {
-    playerId: 'p22',
-    name: 'Enzo',
-    goals: 1,
+    playerId: 'g1',
+    name: 'Miguel',
+    goals: 3,
   },
   topAssists: {
     playerId: 'p18',

@@ -1,4 +1,4 @@
-import { GUEST_PLAYER_MIGUEL } from '@/mocks/players';
+import { mockGuestPlayers } from '@/mocks/guestPlayers';
 import { mockMatches } from '@/mocks/matches';
 import type { MatchDetails } from '@/types';
 
@@ -59,9 +59,9 @@ export const mockMatchDetails: Record<string, MatchDetails> = {
   }),
   m3: buildDetails('m3', {
     goals: [
-      { playerId: GUEST_PLAYER_MIGUEL.id, playerName: GUEST_PLAYER_MIGUEL.name, minute: 12 },
-      { playerId: GUEST_PLAYER_MIGUEL.id, playerName: GUEST_PLAYER_MIGUEL.name, minute: 38 },
-      { playerId: GUEST_PLAYER_MIGUEL.id, playerName: GUEST_PLAYER_MIGUEL.name, minute: 79 },
+      { playerId: mockGuestPlayers[0].id, playerName: mockGuestPlayers[0].name, minute: 12 },
+      { playerId: mockGuestPlayers[0].id, playerName: mockGuestPlayers[0].name, minute: 38 },
+      { playerId: mockGuestPlayers[0].id, playerName: mockGuestPlayers[0].name, minute: 79 },
     ],
     assists: [
       { playerId: 'p18', playerName: 'Igor', minute: 12 },
@@ -73,9 +73,9 @@ export const mockMatchDetails: Record<string, MatchDetails> = {
       starters: [
         ...defaultStarters.filter((p) => p.playerId !== 'p22'),
         {
-          playerId: GUEST_PLAYER_MIGUEL.id,
-          name: GUEST_PLAYER_MIGUEL.name,
-          jerseyNumber: 99,
+          playerId: mockGuestPlayers[0].id,
+          name: mockGuestPlayers[0].name,
+          jerseyNumber: mockGuestPlayers[0].jerseyNumber,
           position: 'atacante',
         },
       ],

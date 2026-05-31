@@ -24,10 +24,10 @@ function EventRow({
   icon?: React.ReactNode;
 }) {
   return (
-    <View className="flex-row items-center border-b border-zinc-100 py-2.5 last:border-b-0">
-      <Text className="w-10 text-sm font-semibold text-zinc-400">{minute}'</Text>
+    <View className="flex-row items-center border-b border-slate-700 py-2.5 last:border-b-0">
+      <Text className="w-10 text-sm font-semibold text-slate-400">{minute}'</Text>
       {icon ? <View className="mr-2">{icon}</View> : null}
-      <Text className="flex-1 text-sm text-zinc-900">{label}</Text>
+      <Text className="flex-1 text-sm text-white">{label}</Text>
     </View>
   );
 }
@@ -42,18 +42,18 @@ function CardIcon({ type }: { type: Card['type'] }) {
 
 function LineupSection({ lineup }: { lineup: MatchDetails['lineup'] }) {
   return (
-    <View className="rounded-2xl bg-white p-4 shadow-sm">
-      <Text className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-400">
+    <View className="rounded-2xl border border-slate-700 bg-dark-card p-4">
+      <Text className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
         Titulares
       </Text>
       {lineup.starters.map((player) => (
         <View
           key={player.playerId}
-          className="flex-row items-center border-b border-zinc-100 py-2 last:border-b-0"
+          className="flex-row items-center border-b border-slate-700 py-2 last:border-b-0"
         >
-          <Text className="w-8 text-sm font-bold text-zinc-400">{player.jerseyNumber}</Text>
-          <Text className="flex-1 text-sm text-zinc-900">{player.name}</Text>
-          <Text className="text-xs font-medium text-zinc-400">
+          <Text className="w-8 text-sm font-bold text-slate-400">{player.jerseyNumber}</Text>
+          <Text className="flex-1 text-sm text-white">{player.name}</Text>
+          <Text className="text-xs font-medium text-slate-400">
             {formatPosition(player.position)}
           </Text>
         </View>
@@ -61,17 +61,17 @@ function LineupSection({ lineup }: { lineup: MatchDetails['lineup'] }) {
 
       {lineup.substitutes.length > 0 ? (
         <>
-          <Text className="mb-2 mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-400">
+          <Text className="mb-2 mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400">
             Reservas
           </Text>
           {lineup.substitutes.map((player) => (
             <View
               key={player.playerId}
-              className="flex-row items-center border-b border-zinc-100 py-2 last:border-b-0"
+              className="flex-row items-center border-b border-slate-700 py-2 last:border-b-0"
             >
-              <Text className="w-8 text-sm font-bold text-zinc-400">{player.jerseyNumber}</Text>
-              <Text className="flex-1 text-sm text-zinc-900">{player.name}</Text>
-              <Text className="text-xs font-medium text-zinc-400">
+              <Text className="w-8 text-sm font-bold text-slate-400">{player.jerseyNumber}</Text>
+              <Text className="flex-1 text-sm text-white">{player.name}</Text>
+              <Text className="text-xs font-medium text-slate-400">
                 {formatPosition(player.position)}
               </Text>
             </View>
@@ -89,7 +89,7 @@ function MatchDetailsContent({ data }: { data: MatchDetails }) {
       contentContainerClassName="pb-8"
       showsVerticalScrollIndicator={false}
     >
-      <View className="bg-dark px-6 pb-10 pt-2">
+      <View className="border-b border-slate-800 bg-slate-900 px-6 pb-10 pt-2">
         <Text className="text-sm text-zinc-400">{formatMatchDate(data.date)}</Text>
         <Text className="mt-1 text-2xl font-bold text-white">vs {data.opponent}</Text>
         <Text className="mt-1 text-sm text-zinc-400">{data.location}</Text>
@@ -111,7 +111,7 @@ function MatchDetailsContent({ data }: { data: MatchDetails }) {
         <LineupSection lineup={data.lineup} />
 
         <SectionHeader title="Gols" className="mb-2 mt-4" />
-        <View className="rounded-2xl bg-white px-4 shadow-sm">
+        <View className="rounded-2xl border border-slate-700 bg-dark-card px-4">
           {data.goals.length > 0 ? (
             data.goals.map((goal, index) => (
               <EventRow
@@ -121,12 +121,12 @@ function MatchDetailsContent({ data }: { data: MatchDetails }) {
               />
             ))
           ) : (
-            <Text className="py-4 text-sm text-zinc-400">Nenhum gol marcado</Text>
+            <Text className="py-4 text-sm text-slate-400">Nenhum gol marcado</Text>
           )}
         </View>
 
         <SectionHeader title="Assistências" className="mb-2 mt-4" />
-        <View className="rounded-2xl bg-white px-4 shadow-sm">
+        <View className="rounded-2xl border border-slate-700 bg-dark-card px-4">
           {data.assists.length > 0 ? (
             data.assists.map((assist, index) => (
               <EventRow
@@ -136,12 +136,12 @@ function MatchDetailsContent({ data }: { data: MatchDetails }) {
               />
             ))
           ) : (
-            <Text className="py-4 text-sm text-zinc-400">Nenhuma assistência</Text>
+            <Text className="py-4 text-sm text-slate-400">Nenhuma assistência</Text>
           )}
         </View>
 
         <SectionHeader title="Cartões" className="mb-2 mt-4" />
-        <View className="rounded-2xl bg-white px-4 shadow-sm">
+        <View className="rounded-2xl border border-slate-700 bg-dark-card px-4">
           {data.cards.length > 0 ? (
             data.cards.map((card, index) => (
               <EventRow
@@ -152,7 +152,7 @@ function MatchDetailsContent({ data }: { data: MatchDetails }) {
               />
             ))
           ) : (
-            <Text className="py-4 text-sm text-zinc-400">Nenhum cartão</Text>
+            <Text className="py-4 text-sm text-slate-400">Nenhum cartão</Text>
           )}
         </View>
       </View>
@@ -172,7 +172,7 @@ export function MatchDetailsScreen({ route }: Props) {
     return (
       <SafeAreaView className="flex-1 bg-surface-secondary" edges={['bottom']}>
         <EmptyState
-          icon={<Ionicons name="alert-circle-outline" size={48} color="#71717a" />}
+          icon={<Ionicons name="alert-circle-outline" size={48} color="#64748b" />}
           title="Erro ao carregar partida"
           description="Não foi possível carregar os detalhes desta partida."
         />

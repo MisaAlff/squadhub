@@ -11,17 +11,17 @@ interface StatCardProps {
 }
 
 const variantClasses = {
-  default: 'border-zinc-200 bg-white',
-  success: 'border-green-200 bg-green-50',
-  warning: 'border-yellow-200 bg-yellow-50',
-  danger: 'border-red-200 bg-red-50',
+  default: 'border-slate-700 bg-slate-800/60',
+  success: 'border-green-500/30 bg-green-500/10',
+  warning: 'border-amber-500/30 bg-amber-500/10',
+  danger: 'border-rose-500/30 bg-rose-500/10',
 } as const;
 
 const valueVariantClasses = {
-  default: 'text-zinc-900',
-  success: 'text-green-700',
-  warning: 'text-yellow-700',
-  danger: 'text-red-700',
+  default: 'text-white',
+  success: 'text-green-400',
+  warning: 'text-amber-400',
+  danger: 'text-rose-400',
 } as const;
 
 export function StatCard({
@@ -40,7 +40,7 @@ export function StatCard({
       )}
     >
       <View className="flex-row items-center justify-between">
-        <Text className="text-sm text-zinc-500">{label}</Text>
+        <Text className="text-sm text-slate-400">{label}</Text>
         {icon}
       </View>
       <Text className={cn('mt-2 text-2xl font-bold', valueVariantClasses[variant])}>

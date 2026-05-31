@@ -14,8 +14,8 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
 
   if (!hasActivity) {
     return (
-      <View className="rounded-2xl bg-white p-6 shadow-sm">
-        <Text className="text-center text-sm text-zinc-400">
+      <View className="rounded-2xl border border-slate-700 bg-dark-card p-6">
+        <Text className="text-center text-sm text-slate-400">
           Sem dados de desempenho neste período
         </Text>
       </View>
@@ -28,7 +28,7 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
   );
 
   return (
-    <View className="rounded-2xl bg-white p-4 shadow-sm">
+    <View className="rounded-2xl border border-slate-700 bg-dark-card p-4">
       <View className="flex-row items-end justify-between gap-2">
         {data.map((point) => {
           const total = point.goals + point.assists;
@@ -50,7 +50,7 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
                   style={{ height: Math.max(assistsHeight, point.assists > 0 ? 4 : 0) }}
                 />
               </View>
-              <Text className="mt-2 text-[10px] font-medium text-zinc-500">
+              <Text className="mt-2 text-[10px] font-medium text-slate-400">
                 {abbreviateOpponent(point.opponent)}
               </Text>
             </View>
@@ -61,11 +61,11 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
       <View className="mt-4 flex-row justify-center gap-4">
         <View className="flex-row items-center gap-1.5">
           <View className="h-3 w-3 rounded-sm bg-primary" />
-          <Text className="text-xs text-zinc-500">Gols</Text>
+          <Text className="text-xs text-slate-400">Gols</Text>
         </View>
         <View className="flex-row items-center gap-1.5">
           <View className="h-3 w-3 rounded-sm bg-blue-500" />
-          <Text className="text-xs text-zinc-500">Assistências</Text>
+          <Text className="text-xs text-slate-400">Assistências</Text>
         </View>
       </View>
     </View>

@@ -6,7 +6,7 @@ import { LoadingSkeleton } from '@/components/LoadingSkeleton';
 
 function PlayerCardSkeletonItem() {
   return (
-    <View className="mb-3 flex-row items-center rounded-2xl bg-white p-4 shadow-sm">
+    <View className="mb-3 flex-row items-center rounded-2xl border border-slate-700 bg-dark-card p-4">
       <LoadingSkeleton width={64} height={64} rounded="full" />
       <View className="ml-4 flex-1 gap-2">
         <LoadingSkeleton width={140} height={16} rounded="sm" />
@@ -21,8 +21,8 @@ export function PlayersSkeleton() {
   return (
     <SafeAreaView className="flex-1 bg-surface-secondary" edges={['bottom']}>
       <DarkScreenHeader className="mb-2">
-        <LoadingSkeleton width={120} height={24} rounded="md" className="bg-dark-card" />
-        <LoadingSkeleton width={160} height={14} rounded="sm" className="mt-2 bg-dark-card" />
+        <LoadingSkeleton width={120} height={24} rounded="md" className="bg-slate-800" />
+        <LoadingSkeleton width={160} height={14} rounded="sm" className="mt-2 bg-slate-800" />
       </DarkScreenHeader>
       <View className="px-4 pt-2">
         {Array.from({ length: 8 }).map((_, index) => (

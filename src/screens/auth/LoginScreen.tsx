@@ -57,7 +57,7 @@ export function LoginScreen() {
           contentContainerClassName="flex-grow"
           keyboardShouldPersistTaps="handled"
         >
-          <View className="bg-dark px-6 pb-10 pt-6">
+          <View className="border-b border-slate-800 bg-slate-900 px-6 pb-10 pt-6">
             <View className="flex-row items-center gap-3">
               <View className="h-12 w-12 items-center justify-center rounded-xl bg-primary">
                 <Ionicons name="football" size={24} color="#ffffff" />
@@ -70,22 +70,22 @@ export function LoginScreen() {
           </View>
 
           <View className="-mt-6 flex-1 px-6 pb-8">
-            <View className="rounded-2xl bg-white p-6 shadow-sm">
-              <Text className="text-xl font-bold text-zinc-900">Entrar</Text>
-              <Text className="mt-1 text-sm text-zinc-500">
+            <View className="rounded-2xl border border-slate-700 bg-dark-card p-6">
+              <Text className="text-xl font-bold text-white">Entrar</Text>
+              <Text className="mt-1 text-sm text-slate-400">
                 Acesse sua conta para ver estatísticas do time
               </Text>
 
               <View className="mt-6">
-                <Text className="mb-1.5 text-sm font-medium text-zinc-700">E-mail</Text>
+                <Text className="mb-1.5 text-sm font-medium text-slate-300">E-mail</Text>
                 <Controller
                   control={control}
                   name="email"
                   render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
-                      className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3.5 text-base text-zinc-900"
+                      className="rounded-xl border border-slate-600 bg-slate-800 px-4 py-3.5 text-base text-white"
                       placeholder="seu@email.com"
-                      placeholderTextColor="#a1a1aa"
+                      placeholderTextColor="#64748b"
                       keyboardType="email-address"
                       autoCapitalize="none"
                       autoComplete="email"
@@ -97,20 +97,20 @@ export function LoginScreen() {
                   )}
                 />
                 {errors.email ? (
-                  <Text className="mt-1.5 text-sm text-red-600">{errors.email.message}</Text>
+                  <Text className="mt-1.5 text-sm text-red-400">{errors.email.message}</Text>
                 ) : null}
               </View>
 
               <View className="mt-4">
-                <Text className="mb-1.5 text-sm font-medium text-zinc-700">Senha</Text>
+                <Text className="mb-1.5 text-sm font-medium text-slate-300">Senha</Text>
                 <Controller
                   control={control}
                   name="password"
                   render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
-                      className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3.5 text-base text-zinc-900"
+                      className="rounded-xl border border-slate-600 bg-slate-800 px-4 py-3.5 text-base text-white"
                       placeholder="••••••"
-                      placeholderTextColor="#a1a1aa"
+                      placeholderTextColor="#64748b"
                       secureTextEntry
                       autoComplete="password"
                       editable={!isSubmitting}
@@ -121,13 +121,13 @@ export function LoginScreen() {
                   )}
                 />
                 {errors.password ? (
-                  <Text className="mt-1.5 text-sm text-red-600">{errors.password.message}</Text>
+                  <Text className="mt-1.5 text-sm text-red-400">{errors.password.message}</Text>
                 ) : null}
               </View>
 
               {errors.root ? (
-                <View className="mt-4 rounded-lg bg-red-50 px-4 py-3">
-                  <Text className="text-sm text-red-600">{errors.root.message}</Text>
+                <View className="mt-4 rounded-lg bg-red-500/15 px-4 py-3">
+                  <Text className="text-sm text-red-400">{errors.root.message}</Text>
                 </View>
               ) : null}
 
@@ -144,7 +144,7 @@ export function LoginScreen() {
               </Pressable>
             </View>
 
-            <Text className="mt-6 text-center text-xs text-zinc-400">
+            <Text className="mt-6 text-center text-xs text-slate-500">
               Demo: {mockCredentials.email} / {mockCredentials.password}
             </Text>
           </View>

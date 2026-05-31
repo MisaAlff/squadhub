@@ -5,12 +5,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { DarkScreenHeader } from '@/components/DarkScreenHeader';
 import { EmptyState } from '@/components/EmptyState';
+import { GoalkeeperCard } from '@/components/GoalkeeperCard';
 import { PlayerCard } from '@/components/PlayerCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { PlayersSkeleton } from '@/components/skeletons/players-skeleton';
 import { usePlayers } from '@/hooks/usePlayers';
 import type { PlayersStackParamList } from '@/navigation/PlayersStack';
 import type { Player, PlayerPosition } from '@/types';
+import { isGoalkeeper } from '@/utils/goalkeeper';
 import { formatPositionGroupLabel, getPositionOrder } from '@/utils/player';
 
 type PlayersListNavigationProp = NativeStackNavigationProp<
@@ -63,7 +65,7 @@ export function PlayersScreen({ navigation }: PlayersScreenProps) {
     return (
       <SafeAreaView className="flex-1 bg-surface-secondary" edges={['top', 'bottom']}>
         <EmptyState
-          icon={<Ionicons name="people-outline" size={48} color="#71717a" />}
+          icon={<Ionicons name="people-outline" size={48} color="#64748b" />}
           title="Nenhum jogador encontrado"
           description="Ainda não há jogadores cadastrados no elenco."
         />
@@ -91,7 +93,7 @@ export function PlayersScreen({ navigation }: PlayersScreenProps) {
       return (
         <View className="px-4">
           <SectionHeader title="Completaram o elenco" className="mb-1 mt-4" />
-          <Text className="mb-2 text-xs text-zinc-500">
+          <Text className="mb-2 text-xs text-slate-500">
             Jogadores convocados para partidas específicas, fora do plantel fixo.
           </Text>
         </View>
@@ -100,12 +102,23 @@ export function PlayersScreen({ navigation }: PlayersScreenProps) {
 
     return (
       <View className="px-4">
-        <PlayerCard
-          player={item.player}
-          onPress={() =>
-            navigation.navigate('PlayerDetails', { playerId: item.player.id })
-          }
-        />
+        {isGoalkeeper(item.player) ? (
+          <GoalkeeperCard
+            goalkeeper={item.player}
+            onPress={() =>
+              navigation.navigate('GoalkeeperDetails', {
+                goalkeeperId: item.player.id,
+              })
+            }
+          />
+        ) : (
+          <PlayerCard
+            player={item.player}
+            onPress={() =>
+              navigation.navigate('PlayerDetails', { playerId: item.player.id })
+            }
+          />
+        )}
       </View>
     );
   };
@@ -122,7 +135,7 @@ export function PlayersScreen({ navigation }: PlayersScreenProps) {
               : item.player.id
         }
         renderItem={renderItem}
-        contentContainerClassName="pb-6"
+        contentContainerClassName="pb-6 pt-4"
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <DarkScreenHeader className="mb-2">

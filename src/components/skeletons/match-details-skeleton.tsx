@@ -5,7 +5,7 @@ import { LoadingSkeleton } from '@/components/LoadingSkeleton';
 
 function SectionSkeleton({ rows = 3 }: { rows?: number }) {
   return (
-    <View className="mb-4 rounded-2xl bg-white p-4 shadow-sm">
+    <View className="mb-4 rounded-2xl border border-slate-700 bg-dark-card p-4">
       <LoadingSkeleton width={100} height={16} rounded="sm" />
       {Array.from({ length: rows }).map((_, index) => (
         <LoadingSkeleton
@@ -23,11 +23,11 @@ function SectionSkeleton({ rows = 3 }: { rows?: number }) {
 export function MatchDetailsSkeleton() {
   return (
     <SafeAreaView className="flex-1 bg-surface-secondary" edges={['bottom']}>
-      <View className="bg-dark px-6 pb-8 pt-4">
-        <LoadingSkeleton width={180} height={14} rounded="sm" className="bg-dark-card" />
-        <LoadingSkeleton width={220} height={28} rounded="md" className="mt-3 bg-dark-card" />
-        <LoadingSkeleton width={140} height={14} rounded="sm" className="mt-2 bg-dark-card" />
-        <LoadingSkeleton width={80} height={36} rounded="md" className="mt-4 bg-dark-card" />
+      <View className="border-b border-slate-800 bg-slate-900 px-6 pb-8 pt-4">
+        <LoadingSkeleton width={180} height={14} rounded="sm" className="bg-slate-800" />
+        <LoadingSkeleton width={220} height={28} rounded="md" className="mt-3 bg-slate-800" />
+        <LoadingSkeleton width={140} height={14} rounded="sm" className="mt-2 bg-slate-800" />
+        <LoadingSkeleton width={80} height={36} rounded="md" className="mt-4 bg-slate-800" />
       </View>
       <View className="-mt-4 px-4">
         <SectionSkeleton rows={5} />

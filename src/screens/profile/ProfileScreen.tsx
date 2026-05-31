@@ -14,16 +14,16 @@ export function ProfileScreen() {
         {user ? (
           <>
             <Avatar name={user.name} imageUrl={user.avatarUrl} size="lg" />
-            <Text className="mt-4 text-2xl font-bold text-zinc-900">{user.name}</Text>
-            <Text className="mt-1 text-zinc-500">{user.email}</Text>
+            <Text className="mt-4 text-2xl font-bold text-white">{user.name}</Text>
+            <Text className="mt-1 text-slate-400">{user.email}</Text>
           </>
         ) : null}
 
         <Pressable
-          className="mt-8 rounded-lg border border-red-300 px-6 py-3 active:bg-red-50"
+          className="mt-8 rounded-lg border border-rose-500/40 px-6 py-3 active:bg-rose-500/10"
           onPress={logout}
         >
-          <Text className="font-medium text-red-600">Sair</Text>
+          <Text className="font-medium text-rose-400">Sair</Text>
         </Pressable>
       </View>
     </SafeAreaView>

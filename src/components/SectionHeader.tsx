@@ -17,7 +17,7 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <View className={cn('mb-3 flex-row items-center justify-between', className)}>
-      <Text className="text-lg font-semibold text-zinc-900">{title}</Text>
+      <Text className="text-lg font-semibold text-white">{title}</Text>
       {actionLabel && onActionPress ? (
         <Pressable onPress={onActionPress} hitSlop={8}>
           <Text className="text-sm font-medium text-primary">{actionLabel}</Text>

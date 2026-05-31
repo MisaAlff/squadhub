@@ -25,7 +25,7 @@ export function LoadingSkeleton({
 }: LoadingSkeletonProps) {
   return (
     <View
-      className={cn('animate-pulse bg-zinc-200', roundedClasses[rounded], className)}
+      className={cn('animate-pulse bg-slate-700', roundedClasses[rounded], className)}
       style={{ width, height }}
     />
   );

@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { theme } from '@/constants/theme';
 import { DashboardScreen } from '@/screens/dashboard/DashboardScreen';
 import { MatchesStack } from '@/navigation/MatchesStack';
-import { PlayersScreen } from '@/screens/players/PlayersScreen';
+import { PlayersStack } from '@/navigation/PlayersStack';
 import { ProfileScreen } from '@/screens/profile/ProfileScreen';
 import { RankingsScreen } from '@/screens/rankings/RankingsScreen';
 
@@ -46,8 +46,8 @@ export function AppTabs() {
       />
       <Tab.Screen
         name="Players"
-        component={PlayersScreen}
-        options={{ title: 'Jogadores' }}
+        component={PlayersStack}
+        options={{ title: 'Jogadores', headerShown: false }}
       />
       <Tab.Screen
         name="Rankings"

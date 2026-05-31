@@ -18,4 +18,6 @@ export interface Player {
   redCards: number;
   mvpCount: number;
   avatarUrl?: string;
+  /** Jogador que completou o elenco em partida(s), fora do plantel fixo. */
+  isGuest?: boolean;
 }

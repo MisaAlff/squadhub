@@ -319,9 +319,3 @@ export const mockPlayers: Player[] = [
     mvpCount: 0,
   },
 ];
-
-/** Convidado — não faz parte do elenco, usado apenas em detalhes de partida. */
-export const GUEST_PLAYER_MIGUEL = {
-  id: 'g1',
-  name: 'Miguel',
-};

@@ -14,6 +14,11 @@ export interface DashboardStats {
     name: string;
     goals: number;
   };
+  topAssists: {
+    playerId: string;
+    name: string;
+    assists: number;
+  };
   nextMatch: Match | null;
   totalMatches: number;
 }

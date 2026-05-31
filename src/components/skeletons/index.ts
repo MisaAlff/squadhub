@@ -1,4 +1,2 @@
-// Skeletons específicos serão adicionados aqui conforme as telas forem implementadas.
-// Exemplos futuros: DashboardSkeleton, PlayerListSkeleton, MatchListSkeleton
-
 export { LoadingSkeleton } from '../LoadingSkeleton';
+export { DashboardSkeleton } from './dashboard-skeleton';

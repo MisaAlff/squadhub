@@ -59,7 +59,7 @@ export function AppTabs() {
       <Tab.Screen
         name="Rankings"
         component={RankingsScreen}
-        options={{ title: 'Rankings' }}
+        options={{ title: 'Rankings', headerShown: false }}
       />
       <Tab.Screen
         name="Profile"

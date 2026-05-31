@@ -1,8 +1,11 @@
 import { mockDashboard } from '@/mocks/dashboard';
 import type { DashboardStats } from '@/types';
 
+const MOCK_DELAY_MS = 400;
+
 export const dashboardService = {
   getStats: async (): Promise<DashboardStats> => {
-    return Promise.resolve(mockDashboard);
+    await new Promise((resolve) => setTimeout(resolve, MOCK_DELAY_MS));
+    return mockDashboard;
   },
 };

@@ -16,6 +16,11 @@ export const mockDashboard: DashboardStats = {
     name: 'Rafael Souza',
     goals: 12,
   },
+  topAssists: {
+    playerId: 'p2',
+    name: 'Lucas Mendes',
+    assists: 9,
+  },
   nextMatch: mockNextMatch,
   totalMatches: 8,
 };

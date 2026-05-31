@@ -1,28 +1,25 @@
 import { create } from 'zustand';
 
+import { authService } from '@/services/authService';
 import type { User } from '@/types';
-
-const mockUser: User = {
-  id: 'u1',
-  name: 'Carlos Administrador',
-  email: 'carlos@peladafc.com.br',
-};
 
 interface AuthState {
   user: User | null;
   isAuthenticated: boolean;
-  login: () => void;
+  login: (email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   isAuthenticated: false,
-  login: () =>
+  login: async (email, password) => {
+    const user = await authService.login(email, password);
     set({
-      user: mockUser,
+      user,
       isAuthenticated: true,
-    }),
+    });
+  },
   logout: () =>
     set({
       user: null,
